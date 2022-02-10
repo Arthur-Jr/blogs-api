@@ -2,13 +2,13 @@
   "name": "blogs-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/api/api.js",
   "scripts": {
-    "debug": "nodemon index.js",
-    "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate $",
-    "start": "node index.js",
-    "drop": "npx sequelize-cli db:drop $",
-    "seed": "npx sequelize-cli db:seed:all $"
+    "debug": "nodemon .",
+    "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "start": "node .",
+    "drop": "npx sequelize-cli db:drop",
+    "seed": "npx sequelize-cli db:seed:all"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Arthur-Jr/blogs-api#readme",
   "dependencies": {
+    "body-parser": "^1.19.1",
     "dotenv": "^8.2.0",
     "eslint-config-trybe-backend": "^1.0.4",
     "express": "^4.17.2",
