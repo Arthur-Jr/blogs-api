@@ -1,4 +1,5 @@
 const joi = require('joi');
+const bcrypt = require('bcrypt');
 
 const { User } = require('../sequelize/models');
 const { BAD_REQUEST } = require('../utils/httpStatus');
@@ -26,13 +27,19 @@ const checkLoginData = (data) => {
   }
 };
 
+const checkPassword = async (userPassword, loginPassword) => {
+  const cryptCheck = await bcrypt.compare(loginPassword, userPassword);
+
+  if (!cryptCheck) throwInvalid();
+};
+
 const loginService = async ({ email, password }) => {
   checkLoginData({ email, password });
 
   const user = await User.findOne({ where: { email } });
   
   if (user === null) throwInvalid();
-  if (password !== user.password) throwInvalid();
+  await checkPassword(user.password, password);
 
   const token = getToken({ email, id: user.id });
 

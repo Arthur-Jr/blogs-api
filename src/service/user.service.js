@@ -1,4 +1,5 @@
 const joi = require('joi');
+const bcrypt = require('bcrypt');
 
 const { User } = require('../sequelize/models');
 const { BAD_REQUEST, CONFLICT, NOT_FOUND } = require('../utils/httpStatus');
@@ -45,13 +46,25 @@ const checkId = (id) => {
   }
 };
 
+const cryptPassword = async (password) => {
+  const salt = await bcrypt.genSalt();
+  return bcrypt.hash(password, salt);
+};
+
 const registerUserService = async ({ displayName, email, password, image = null }) => {
   checkUserData({ displayName, email, password });
 
   const checkDuplicity = await User.findOne({ where: { email } });
   if (checkDuplicity !== null) throwAlreadyExist();
 
-  const { dataValues } = await User.create({ displayName, email, password, image });
+  const cryptedPassword = await cryptPassword(password);
+
+  const { dataValues } = await User.create({
+    displayName,
+    email,
+    password: cryptedPassword,
+    image
+  });
 
   const token = getToken({ email, id: dataValues.id });
 
