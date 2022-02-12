@@ -15,7 +15,7 @@ const {
   HTTP_OK_STATUS,
   NOT_FOUND,
   NO_CONTENT,
-} = require('../../utils/httpStatus');
+} = require('../utils/httpStatus');
 
 describe('Testes da rota de user.', () => {
   let response;
