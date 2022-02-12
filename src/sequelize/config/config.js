@@ -11,7 +11,7 @@ module.exports = {
   test: {
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
-    database: 'blogs_api',
+    database: 'blogs_api_tests',
     host: process.env.HOSTNAME,
     dialect: 'mysql',
   },
