@@ -9,12 +9,9 @@ const URL = `http://localhost:${PORT}`;
 
 const {
   BAD_REQUEST,
-  CONFLICT,
   CREATED,
   UNAUTHORIZED,
   HTTP_OK_STATUS,
-  NOT_FOUND,
-  NO_CONTENT,
 } = require('../utils/httpStatus');
 
 describe('Testes da rota de categories.', () => {
@@ -23,13 +20,7 @@ describe('Testes da rota de categories.', () => {
 
   const user = { displayName: 'Lewis Hamilton', email: 'lewishamilton@gmail.com', password: '123456' }
 
-  beforeAll(() => {
-    shell.exec('npx sequelize-cli db:drop');
-    shell.exec('npx sequelize-cli db:create && npx sequelize-cli db:migrate');
-    shell.exec('npx sequelize-cli db:seed:all');
-  });
-
-  beforeEach(async () => {
+  beforeAll(async () => {
     tokenResponse = await frisby.post(`${URL}/login`, { email: user.email, password: user.password });
   });
 

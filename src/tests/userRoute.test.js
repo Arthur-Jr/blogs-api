@@ -23,12 +23,6 @@ describe('Testes da rota de user.', () => {
 
   const newUser = { displayName: 'displayTest', email: 'test@email.com', password: '123456' };
   const oldUser = { displayName: 'Michael Schumacher', email: 'MichaelSchumacher@gmail.com', password: '123456' }
-
-  beforeAll(() => {
-    shell.exec('npx sequelize-cli db:drop');
-    shell.exec('npx sequelize-cli db:create && npx sequelize-cli db:migrate');
-    shell.exec('npx sequelize-cli db:seed:all');
-  });
   
   describe('Testes de cadastro de usuário. "POST /user"', () => {
     describe('Testes do campo "displayName".', () => {

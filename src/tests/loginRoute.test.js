@@ -17,12 +17,6 @@ describe('Testes da rota de login', () => {
 
   const user = { displayName: 'Lewis Hamilton', email: 'lewishamilton@gmail.com', password: '123456' }
 
-  beforeAll(() => {
-    shell.exec('npx sequelize-cli db:drop');
-    shell.exec('npx sequelize-cli db:create && npx sequelize-cli db:migrate');
-    shell.exec('npx sequelize-cli db:seed:all');
-  });
-
   it('Será testado que não é possível fazer login sem o campo email', async () => {
     response = await frisby.post(`${URL}/login`, { email: undefined, password: user.password });
 
