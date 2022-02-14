@@ -11,8 +11,6 @@ Back-end:
 
 ## Instalando Dependências
 
-> Backend
-
 Na raiz do projeto:
 ```bash
 npm install
@@ -21,7 +19,11 @@ npm install
 
 É necessário renomeear o arquivo .env.dev para .env.
 
+![.env.dev](./public/Renomeio-env.dev.png)
+
 Ainda no arquivo .env é necessário colocar o usuário e a senha do mysql assim como a porta que aplicação ira rodar.
+
+![.env.dev](./public/env-MySQL-infos.png)
 
 * É necessário que o MySQL esteja ativo.
 
@@ -40,6 +42,8 @@ Ainda no arquivo .env é necessário colocar o usuário e a senha do mysql assim
     ```
 
 ## Executando Testes
+
+É necessário mudar o valor da key NODE_ENV para "teste" no arquivo .env
 
 * Para rodar todos os testes:
 
