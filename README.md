@@ -23,7 +23,7 @@ npm install
 
 Ainda no arquivo .env é necessário colocar o usuário e a senha do mysql assim como a porta que aplicação ira rodar.
 
-![.env.dev](./public/env-MySQL-infos.png)
+![MySQL-infos](./public/env-MySQL-infos.png)
 
 * É necessário que o MySQL esteja ativo.
 
@@ -45,8 +45,18 @@ Ainda no arquivo .env é necessário colocar o usuário e a senha do mysql assim
 
 É necessário mudar o valor da key NODE_ENV para "teste" no arquivo .env
 
-* Para rodar todos os testes:
+![.env.dev](./public/NODE_ENV-development.png) = ![.env.dev](./public/NODE_ENV-test.png)
 
+Tem que reiniciar o npm start após a mudança no ```NODE_ENV```
+
+* Para rodar todos os testes:
+  
+  Com o ``` npm start``` ativo
   ```
     npm test
   ```
+  
+## End-Points
+
+É necessário utilizar o [Insomnia](https://insomnia.rest/download) ou [Postman](https://www.postman.com/)
+para fazer requisições de qualquer tipo diferente do GET.
