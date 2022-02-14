@@ -204,6 +204,8 @@ describe('Testes da rota de user.', () => {
     });
 
     it('Será testatdo que é possível excluir meu usuário com sucesso', async () => {
+      tokenResponse = await frisby.post(`${URL}/login`, { email: 'test@email.com', password: '123456' });
+
       response = await frisby.setup({
         request: {
           headers: { authorization: tokenResponse.json.token, 'Content-Type': 'application/json' }
