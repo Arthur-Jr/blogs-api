@@ -27,31 +27,31 @@ Ainda no arquivo .env é necessário colocar o usuário e a senha do mysql assim
 
 * É necessário que o MySQL esteja ativo.
 
-  Para checar o status do MySQL
+  Para checar o status do MySQL:
     ```
     sudo systemctl status mysql
     ```
-  Para iniciar o MySQL
+  Para iniciar o MySQL:
     ```
     sudo systemctl start mysql
     ```
  
-* Iniciando a aplicação
+* Iniciando a aplicação:
     ```
     npm start
     ```
 
 ## Executando Testes
 
-É necessário mudar o valor da key NODE_ENV para "teste" no arquivo .env
+É necessário mudar o valor da key NODE_ENV para "teste" no arquivo .env.
 
 ![.env.dev](./public/NODE_ENV-development.png) = ![.env.dev](./public/NODE_ENV-test.png)
 
-Tem que reiniciar o npm start após a mudança no ```NODE_ENV```
+Tem que reiniciar o npm start após a mudança no ```NODE_ENV```.
 
 * Para rodar todos os testes:
   
-  Com o ``` npm start``` ativo
+  Com o ``` npm start``` ativo.
   ```
     npm test
   ```
