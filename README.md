@@ -60,3 +60,56 @@ Tem que reiniciar o npm start após a mudança no ```NODE_ENV```.
 
 É necessário utilizar o [Insomnia](https://insomnia.rest/download) ou [Postman](https://www.postman.com/)
 para fazer requisições de qualquer tipo diferente do GET.
+
+ * O que é necessário para fazer requisições e sua respostas:
+
+    * O end-point (POST /user)
+    ![/user](./public/cadastro-de-usuario.png)
+  
+    * O end-point (POST /login)
+    ![/login](./public/login.png)
+  
+    * O end-point (GET /user)
+    ![/user](./public/listar-usuarios.png)
+    ![/auth](./public/header-auth.png)
+
+    * O end-point (GET /user/:id)
+    ![/user](./public/listar-um-usuario.png)
+    ![/auth](./public/header-auth.png)
+
+    * O end-point (POST /categories)
+    ![/categories](./public/cadastrar-categoria.png)
+    ![/auth](./public/header-auth.png)
+  
+    * O end-point (GET /categories)
+    ![/categories](./public/buscar-todas-categorias.png)
+    ![/auth](./public/header-auth.png)
+
+    * O end-point (POST /post)
+    ![/post](./public/criar-blog-post.png)
+    ![/auth](./public/header-auth.png)
+  
+    * O end-point (GET /post)
+    ![/post](./public/listar-blog-posts.png)
+    ![/auth](./public/header-auth.png)
+  
+    * O end-point (GET /post/:id)
+    ![/post](./public/listar-um-post.png)
+    ![/auth](./public/header-auth.png)
+  
+    * O end-point (PUT /post/:id)
+    ![/post](./public/editar-post.png)
+    ![/auth](./public/header-auth.png)
+  
+    * O end-point (DELETE post/:id)
+    ![/post](./public/deletar-post.png)
+    ![/auth](./public/header-auth.png)
+  
+    * O end-point (DELETE /user/me)
+    ![/user](./public/deletar-user.png)
+    ![/auth](./public/header-auth.png)
+  
+    * O end-point (GET /post/search?q='')
+    ![/post](./public/buscar-post-pelo-content.png)
+    ![/post](./public/buscar-post-pelo-title.png)
+    ![/auth](./public/header-auth.png)
